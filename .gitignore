@@ -97,3 +97,23 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# Ignore all 3D models in Assets/M5-Models (but keep the .meta files)
+/Assets/M5-Models/*.fbx
+/Assets/M5-Models/*.obj
+/Assets/M5-Models/*.blend
+/Assets/M5-Models/*.dae
+/Assets/M5-Models/*.3ds
+/Assets/M5-Models/*.dxf
+/Assets/M5-Models/*.ply
+/Assets/M5-Models/*.stl
+/Assets/M5-Models/*.gltf
+/Assets/M5-Models/*.glb
+
+# Ignore all audio files in Assets/M8-Audios (but keep the .meta files)
+/Assets/M8-Audios/*.wav
+/Assets/M8-Audios/*.mp3
+/Assets/M8-Audios/*.ogg
+/Assets/M8-Audios/*.aiff
+/Assets/M8-Audios/*.flac
+
