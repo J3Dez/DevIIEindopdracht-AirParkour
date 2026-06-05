@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     {
         MoveForward();
         MoveSideways();
+        MoveUpDown();
     }
 
     private void MoveForward()
@@ -21,4 +22,12 @@ public class PlayerController : MonoBehaviour
         float input = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * input * horizontalSpeed * Time.deltaTime);
     }
+
+    
+    private void MoveUpDown()
+    {
+        float input = Input.GetAxis("Vertical");
+        transform.Translate(Vector3.up * input * 5f * Time.deltaTime);
+    }
+
 }
