@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float horizontalSpeed = 5f;
     [SerializeField] private float verticalSpeed = 5f;
     [SerializeField] private float tiltAmount = 30f;
+    [SerializeField] private float tiltSpeed = 5f;
 
     private void Update()
     {
