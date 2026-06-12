@@ -19,7 +19,16 @@ public class LoadingScreenManager : MonoBehaviour
     private void Start()
     {
         ShowRandomTip();
-        Invoke(nameof(StartFadeOut), loadingTime);
+
+        Time.timeScale = 0f; // game pauze
+        ShowRandomTip();
+
+    }
+
+    public void StartGame()
+    {
+        Time.timeScale = 1f; // game starten
+        StartCoroutine(FadeOut());
     }
 
     private void ShowRandomTip()
