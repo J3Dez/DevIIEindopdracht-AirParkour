@@ -33,9 +33,9 @@ public class LoadingScreenManager : MonoBehaviour
 
     private void ShowRandomTip()
     {
-        if (tips == null || tips.Length == 0)
+        if (tips == null || tips.Length == 0 || tipText == null)
         {
-            tipText.text = "No tips available.";
+            Debug.LogWarning("Tips of TipText niet ingesteld!");
             return;
         }
 
