@@ -12,7 +12,6 @@ public class ScoreManager : MonoBehaviour
 
     private void Awake()
     {
-        
         if (Instance == null)
         {
             Instance = this;
@@ -21,11 +20,19 @@ public class ScoreManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        ZetScoreZichtbaar(false);
     }
 
     private void Start()
     {
+        ZetScoreZichtbaar(false);
         UpdateScoreUI();
+    }
+
+    public void ToonScoreTijdensSpelen()
+    {
+        ZetScoreZichtbaar(true);
     }
 
     public void VoegPuntenToe(int punten)
@@ -39,6 +46,14 @@ public class ScoreManager : MonoBehaviour
         if (scoreText != null)
         {
             scoreText.text = "Score: " + huidigeScore;
+        }
+    }
+
+    private void ZetScoreZichtbaar(bool status)
+    {
+        if (scoreText != null)
+        {
+            scoreText.gameObject.SetActive(status);
         }
     }
 }
