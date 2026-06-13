@@ -13,13 +13,10 @@ public class LoadingScreenManager : MonoBehaviour
     [SerializeField] private string[] tips;
 
     [Header("Settings")]
-    [SerializeField] private float loadingTime = 3f;
     [SerializeField] private float fadeDuration = 1f;
 
     private void Start()
     {
-        ShowRandomTip();
-
         Time.timeScale = 0f; // game pauze
         ShowRandomTip();
 
@@ -43,10 +40,7 @@ public class LoadingScreenManager : MonoBehaviour
         tipText.text = tips[randomIndex];
     }
 
-    private void StartFadeOut()
-    {
-        StartCoroutine(FadeOut());
-    }
+  
 
     private IEnumerator FadeOut()
     {
@@ -55,7 +49,7 @@ public class LoadingScreenManager : MonoBehaviour
         while (time < fadeDuration)
         {
             canvasGroup.alpha = 1 - (time / fadeDuration);
-            time += Time.deltaTime;
+            time += Time.unscaledDeltaTime; 
             yield return null;
         }
 

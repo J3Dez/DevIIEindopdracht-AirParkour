@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float horizontalSpeed = 5f;
     [SerializeField] private float verticalSpeed = 5f;
     [SerializeField] private float tiltAmount = 30f;
-    [SerializeField] private float tiltSpeed = 5f;
 
     private void Update()
     {
@@ -39,4 +38,26 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.up * input * verticalSpeed * Time.deltaTime, Space.World);
     }
 
+   private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Edelsteen"))
+        {
+            Debug.Log("Edelsteen gevangen  " + other.gameObject.name);
+
+            if (ScoreManager.Instance != null)
+            {
+                ScoreManager.Instance.VoegPuntenToe(10);
+            }
+
+            Destroy(other.gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Gecrasht tegen: " + collision.gameObject.name);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(
+            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
+        );
+    }
 }
