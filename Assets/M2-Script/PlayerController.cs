@@ -65,7 +65,6 @@ public class PlayerController : MonoBehaviour
         {
             Time.timeScale = 0f;
             Debug.Log($"Gecrasht tegen een obstacle");
-
         }
     }
 }
