@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -6,6 +8,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float horizontalSpeed = 5f;
     [SerializeField] private float verticalSpeed = 5f;
     [SerializeField] private float tiltAmount = 30f;
+
+    //add explotie effect
+    public GameObject explosionEffect;
 
     private void Update()
     {
@@ -26,8 +31,6 @@ public class PlayerController : MonoBehaviour
 
         float tilt = -input * tiltAmount;
         transform.rotation = Quaternion.Euler(0f, 0f, tilt);
-
-
 
     }
 
@@ -56,15 +59,23 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Gecrasht tegen: " + collision.gameObject.name);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(
-            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
-        );
 
         
         if (collision.gameObject.CompareTag("Obstacle"))
         {
+            Instantiate(explosionEffect, transform.position, Quaternion.identity);
             Time.timeScale = 0f;
+            StartCoroutine(RestartAfterDelay());
             Debug.Log($"Gecrasht tegen een obstacle");
         }
+    }
+
+    private IEnumerator RestartAfterDelay()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+        Time.timeScale = 1f;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(
+            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
+        );
     }
 }
