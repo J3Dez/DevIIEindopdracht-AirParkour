@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Munt
   - Edelsteen
+  - Obstacle
   layers:
   - Default
   - TransparentFX

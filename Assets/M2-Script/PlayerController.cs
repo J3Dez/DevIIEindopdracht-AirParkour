@@ -59,5 +59,13 @@ public class PlayerController : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(
             UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
         );
+
+        
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Time.timeScale = 0f;
+            Debug.Log($"Gecrasht tegen een obstacle");
+
+        }
     }
 }
