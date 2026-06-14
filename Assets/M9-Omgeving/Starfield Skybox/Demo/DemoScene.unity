@@ -1195,7 +1195,7 @@ MonoBehaviour:
   vliegtuig: {fileID: 320647027}
   interval: 1
   maxGems: 15
-  straal: 20
+  afstandVoorUit: 30
 --- !u!4 &1284871782
 Transform:
   m_ObjectHideFlags: 0
@@ -2243,6 +2243,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 878805451245342253, guid: 917bc20eb7b18094299ff1f9efef5109, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2108199013614596116, guid: 917bc20eb7b18094299ff1f9efef5109, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2295,6 +2299,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1.21
       objectReference: {fileID: 0}
+    - target: {fileID: 6795476938371483444, guid: 917bc20eb7b18094299ff1f9efef5109, type: 3}
+      propertyPath: explosionEffect
+      value: 
+      objectReference: {fileID: 7697740737130384860, guid: 53e2be0e49f58514a93c488c3e384f50, type: 3}
     - target: {fileID: 7302018740175192988, guid: 917bc20eb7b18094299ff1f9efef5109, type: 3}
       propertyPath: m_IsTrigger
       value: 1

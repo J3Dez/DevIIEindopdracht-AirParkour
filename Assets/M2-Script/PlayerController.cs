@@ -51,28 +51,31 @@ public class PlayerController : MonoBehaviour
 
             Destroy(other.gameObject);
         }
+
+        if (other.CompareTag("Obstacle"))
+        {
+           
+            GameObject explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            explosion.GetComponent<ParticleSystem>().Play();
+            Destroy(explosion, 3f);
+            
+
+            forwardSpeed = 0f;
+
+            foreach (MeshRenderer mesh in GetComponentsInChildren<MeshRenderer>())
+            {
+                mesh.enabled = false;
+            }
+
+            StartCoroutine(RestartAfterDelay());
+            Debug.Log("Gecrasht tegen een obstacle");
+            Destroy(other.gameObject);
+        }
     }
-
-private void OnCollisionEnter(Collision collision)
-{
-    if (collision.gameObject.CompareTag("Obstacle"))
-    {
-        GameObject explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);
-        explosion.GetComponent<ParticleSystem>().Play();
-        Destroy(explosion, 3f);
-
-        Time.timeScale = 0f;
-        StartCoroutine(RestartAfterDelay());
-
-        Debug.Log("Gecrasht tegen een obstacle");
-    }
-}
-
 
     private IEnumerator RestartAfterDelay()
     {
-        yield return new WaitForSecondsRealtime(3f);
-        Time.timeScale = 1f;
+        yield return new WaitForSeconds(3f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(
             UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
         );

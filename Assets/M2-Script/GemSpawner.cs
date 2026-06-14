@@ -6,7 +6,7 @@ public class GemSpawner : MonoBehaviour
     public GameObject gemPrefab;
     public Transform vliegtuig;
     
-    public float interval = 1f;     // Om de hoeveel seconden spawnen?
+    public float interval = 1f;     
     public float maxGems = 15;      
     public float afstandVoorUit = 30f; //  spawnen van edelstenen
 
@@ -35,9 +35,9 @@ public class GemSpawner : MonoBehaviour
         Vector3 rechtVoorUit = vliegtuig.position + (vliegtuig.forward * afstandVoorUit);
 
         Vector3 randomAfwijking = new Vector3(
-            Random.Range(-10f, 10f), // Links of rechts
-            Random.Range(-4f, 4f),   // Iets hoger of lager
-            Random.Range(-5f, 5f)    // Iets verder of dichterbij
+            Random.Range(-10f, 10f), 
+            Random.Range(-4f, 4f),  
+            Random.Range(-5f, 5f)    
         );
 
         //  optellen 
