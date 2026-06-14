@@ -1162,6 +1162,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1284871780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1284871782}
+  - component: {fileID: 1284871781}
+  m_Layer: 0
+  m_Name: EdelsteenSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1284871781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284871780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8841a9bd5164bc6438087305441c7476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemPrefab: {fileID: 1369594010365958750, guid: 7d841180a67bb1d4fac9c343b16b3a93, type: 3}
+  vliegtuig: {fileID: 320647027}
+  interval: 1
+  maxGems: 15
+  straal: 20
+--- !u!4 &1284871782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1284871780}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.13854, y: 4.9681168, z: 24.90133}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1292851291
 GameObject:
   m_ObjectHideFlags: 0
@@ -2246,6 +2295,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1.21
       objectReference: {fileID: 0}
+    - target: {fileID: 7302018740175192988, guid: 917bc20eb7b18094299ff1f9efef5109, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8822007533607230772, guid: 917bc20eb7b18094299ff1f9efef5109, type: 3}
     m_RemovedGameObjects: []
@@ -2271,3 +2324,4 @@ SceneRoots:
   - {fileID: 1178883390}
   - {fileID: 1640791565}
   - {fileID: 1661211729}
+  - {fileID: 1284871782}
