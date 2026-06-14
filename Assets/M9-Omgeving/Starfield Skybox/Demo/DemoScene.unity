@@ -2228,7 +2228,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1414045095778885429, guid: 917bc20eb7b18094299ff1f9efef5109, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1414045095778885429, guid: 917bc20eb7b18094299ff1f9efef5109, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2296,27 +2296,27 @@ PrefabInstance:
       objectReference: {fileID: 7697740737130384860, guid: 53e2be0e49f58514a93c488c3e384f50, type: 3}
     - target: {fileID: 7302018740175192988, guid: 917bc20eb7b18094299ff1f9efef5109, type: 3}
       propertyPath: m_Size.x
-      value: 1.6853925
+      value: 0.97785616
       objectReference: {fileID: 0}
     - target: {fileID: 7302018740175192988, guid: 917bc20eb7b18094299ff1f9efef5109, type: 3}
       propertyPath: m_Size.y
-      value: 1.4384897
+      value: 0.96044654
       objectReference: {fileID: 0}
     - target: {fileID: 7302018740175192988, guid: 917bc20eb7b18094299ff1f9efef5109, type: 3}
       propertyPath: m_Size.z
-      value: 5.781798
+      value: 1.0078543
       objectReference: {fileID: 0}
     - target: {fileID: 7302018740175192988, guid: 917bc20eb7b18094299ff1f9efef5109, type: 3}
       propertyPath: m_Center.x
-      value: -0.021162331
+      value: 0.0057915463
       objectReference: {fileID: 0}
     - target: {fileID: 7302018740175192988, guid: 917bc20eb7b18094299ff1f9efef5109, type: 3}
       propertyPath: m_Center.y
-      value: 0.21924578
+      value: -0.019775027
       objectReference: {fileID: 0}
     - target: {fileID: 7302018740175192988, guid: 917bc20eb7b18094299ff1f9efef5109, type: 3}
       propertyPath: m_Center.z
-      value: -0.736415
+      value: -0.0054587023
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

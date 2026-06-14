@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
     {
         transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
     }
-
     private void MoveSideways()
     {
         float input = Input.GetAxis("Horizontal");
@@ -32,9 +31,7 @@ public class PlayerController : MonoBehaviour
         float tilt = -input * tiltAmount;
         transform.rotation = Quaternion.Euler(0f, 0f, tilt);
 
-    }
-
-    
+    }    
     private void MoveUpDown()
     {
         float input = Input.GetAxis("Vertical");
@@ -56,23 +53,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+private void OnCollisionEnter(Collision collision)
+{
+    if (collision.gameObject.CompareTag("Obstacle"))
     {
-        Debug.Log("Gecrasht tegen: " + collision.gameObject.name);
+        GameObject explosion = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        explosion.GetComponent<ParticleSystem>().Play();
+        Destroy(explosion, 3f);
 
-        
-        if (collision.gameObject.CompareTag("Obstacle"))
-        {
-            Instantiate(explosionEffect, transform.position, Quaternion.identity);
-            Time.timeScale = 0f;
-            StartCoroutine(RestartAfterDelay());
-            Debug.Log($"Gecrasht tegen een obstacle");
-        }
+        Time.timeScale = 0f;
+        StartCoroutine(RestartAfterDelay());
+
+        Debug.Log("Gecrasht tegen een obstacle");
     }
+}
+
 
     private IEnumerator RestartAfterDelay()
     {
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(3f);
         Time.timeScale = 1f;
         UnityEngine.SceneManagement.SceneManager.LoadScene(
             UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
