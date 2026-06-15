@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
 
     private int huidigeScore = 0;
+    private bool levelLoaded = false;
 
     private void Awake()
     {
@@ -35,11 +37,28 @@ public class ScoreManager : MonoBehaviour
         ZetScoreZichtbaar(true);
     }
 
+    
+    
+    
     public void VoegPuntenToe(int punten)
     {
         huidigeScore += punten;
         UpdateScoreUI();
+
+        Debug.Log("Score: " + huidigeScore);
+
+        if (huidigeScore >= 120 && !levelLoaded)
+        {
+            Debug.Log("WE GAAN NAAR END SCENE!");
+
+            levelLoaded = true;
+            SceneManager.LoadScene("Endscene");
+        }
     }
+
+
+    
+
 
     private void UpdateScoreUI()
     {

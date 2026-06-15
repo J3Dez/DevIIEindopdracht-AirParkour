@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7124320739842802328}
   - component: {fileID: 4220345594818912590}
   - component: {fileID: -2006603567784883555}
+  - component: {fileID: -271386192957029837}
   m_Layer: 0
   m_Name: Edelsteen1
-  m_TagString: Edelsteen
+  m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7339077, y: 0, z: 0, w: 0.6792492}
   m_LocalPosition: {x: -13.6694, y: 0.43810338, z: 28.369698}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 200, y: 200, z: 200}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -108,3 +109,15 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.0044154297
   m_Center: {x: 0, y: 0, z: 0.00003439653}
+--- !u!114 &-271386192957029837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369594010365958750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fef6ce66b02f1e45bd6663f9ea5caa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -25,7 +25,7 @@ public class LoadingScreenManager : MonoBehaviour
     public void StartGame()
     {
         Time.timeScale = 1f; // game starten
-        StartCoroutine(FadeOut());
+        loadingScreen.SetActive(false);
     }
 
     private void ShowRandomTip()
