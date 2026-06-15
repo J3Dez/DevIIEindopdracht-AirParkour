@@ -2,20 +2,40 @@ using UnityEngine;
 
 public class MeteorBehavior : MonoBehaviour
 {
-    public float fallSpeed = 10f;
-    public float forwardSpeed = 3f;
-    public float lifeTime = 5f;
+    [SerializeField] private float speed = 15f;
+    private Transform player;
 
-    void Start()
+    private void Start()
     {
-        Destroy(gameObject, lifeTime);
+        GameObject playerObj = GameObject.FindWithTag("Player");
+
+        if (playerObj != null)
+        {
+            player = playerObj.transform;
+        }
+        else
+        {
+            Debug.LogError("Player not found!");
+        }
+
+        Destroy(gameObject, 10f);
     }
 
-    void Update()
+    
+    private void Update()
     {
-        Vector3 movement = new Vector3(0, -fallSpeed, -forwardSpeed) * Time.deltaTime;
-        transform.Translate(movement, Space.World);
+        if (player != null)
+        {
+            Vector3 direction = (player.position - transform.position).normalized;
 
-        transform.Rotate(new Vector3(15, 30, 45) * Time.deltaTime);
+            transform.position += direction * speed * Time.deltaTime;
+
+            // laat meteor kijken naar speler
+            transform.LookAt(player);
+        }
+
+        // draai effect
+        transform.Rotate(100f * Time.deltaTime, 80f * Time.deltaTime, 50f * Time.deltaTime);
     }
+
 }
